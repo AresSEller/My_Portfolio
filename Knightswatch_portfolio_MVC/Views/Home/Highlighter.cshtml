@@ -1,0 +1,59 @@
+﻿
+
+<h2>Highlighter</h2>
+
+<div class="row">
+    
+    <div class="col-md-6">
+
+        <button class="btn btn.primary" id="ShowHide">Show/Hide Code</button>
+
+        </div>
+    <div class="col-md-6">
+
+        <div id="Code">
+
+<pre class="brush: js">
+   function myFunction() {
+                var a = +$("#num1").val();
+                var b = +$("#num2").val();
+                var c = +$("#num3").val();
+                var d = +$("#num4").val();
+                var e = +$("#num5").val();
+                var str = "min value: " + Math.min(a, b, c, d, e) + " max value: " + Math.max(a, b, c, d, e);
+                document.getElementById("demo").innerHTML = str;
+            }
+</pre>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#Code").hide();
+
+            function myFunction() {
+                var a = +$("#num1").val();
+                var b = +$("#num2").val();
+                var c = +$("#num3").val();
+                var d = +$("#num4").val();
+                var e = +$("#num5").val();
+                var str = "min value: " + Math.min(a, b, c, d, e) + " max value: " + Math.max(a, b, c, d, e);
+                document.getElementById("demo").innerHTML = str;
+
+            }
+        });
+
+
+        $("#ShowHide").click(function () {
+            $("#Code").toggle();
+        });
+
+
+    </script>
+    }

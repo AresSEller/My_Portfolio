@@ -1,0 +1,396 @@
+﻿
+@{
+    ViewBag.Title = "JSBasics";
+}
+
+<h2>JSBasics</h2>
+
+<style>
+    hr {
+        height: 6px;
+        background-color: black;
+    }
+</style>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <button class="btn btn-danger center-block" data-toggle="modal" data-target="#mathModal"> Functions or Nothing! </button>
+    </div>
+
+    <div class="col-md-3">
+        <button class="btn btn-danger center-block" data-toggle="modal" data-target="#factorialModal"> Factorials or Facsmorials? </button>
+    </div>
+
+    <div class="col-md-3">
+        <button class="btn btn-danger center-block" data-toggle="modal" data-target="#fizzModal"> FIZZ-BUZZ! </button>
+    </div>
+
+    <div class="col-md-3">
+        <button class="btn btn-danger center-block" data-toggle="modal" data-target="#palindromeModal"> Palindrome or Nah? </button>
+    </div>
+    <hr>
+</div>
+<hr />
+<div class="row">
+    <button class="btn btn-danger center-block" data-toggle="modal" data-target="#allModal"> EVERY LAST ONE! </button>
+</div>
+
+
+
+
+@*Modals*@
+
+
+
+<!-- Math -->
+<div id="mathModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="row h3 text-center">
+                        <div class="col-md-6 h3">
+                            Input First Number<br />
+                            Input Second Number<br />
+                            Input Third Number<br />
+                            Input Fourth Number<br />
+                            Input Fifth Number<br />
+                        </div>
+                        <div class="col-md-6">
+                            <input id="num1" /><br />
+                            <input id="num2" /><br />
+                            <input id="num3" /><br />
+                            <input id="num4" /><br />
+                            <input id="num5" /><br />
+                        </div>
+
+
+                        <button onclick="myFunction()" class="center-block"> Find Min, Max Values</button>
+                        <!--limited-->
+                    </div>
+
+                    <p id="demo" class="h3"></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Factorial -->
+<div id="factorialModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Factorials</h4>
+            </div>
+            <div class="modal-body">
+                <input type="number" id="NTF" />
+
+                <button class="btn btn-info" id="btnFact"> Click </button>
+
+                <p id="factResult"></p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Fizz-Buzz -->
+<div id="fizzModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <h1>FIZZBUZZ</h1>
+
+                    <div class="col-md-3">
+                        <input id="Fizzvalue" type="number" name="fizz" value="" />
+                        <input id="Buzzvalue" type="number" name="buzz" value="" />
+                        <input type="submit" onclick="buzzIt()" value="Fizzy Boi" />
+                        <hr />
+                        <div class="row">
+                            <p id="results"> </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Palindrome -->
+<div id="palindromeModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <input type="text" id="wordInput" />
+                    </div>
+
+                    <div class="col-md-4">
+                        The Result!
+
+                        <div class="row">
+                            <p id="Results"></p>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+                        <button class="btn btn-primary" id="btnPalindrome">An Eye for and eyE</button>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- All -->
+<div id="allModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <h2>Dynamic Pills</h2>
+                    <p>To make the tabs toggleable, add the data-toggle="pill" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
+                    <ul class="nav nav-pills">
+                        <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+                        <li><a data-toggle="pill" href="#menu1">Menu 1</a></li>
+                        <li><a data-toggle="pill" href="#menu2">Menu 2</a></li>
+                        <li><a data-toggle="pill" href="#menu3">Menu 3</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <h3>HOME</h3>
+                            <div class="col-md-3">
+                                <button class="btn btn-danger center-block" data-toggle="modal" data-target="#mathModal"> Functions or Nothing! </button>
+                            </div>
+                        </div>
+                        <div id="menu1" class="tab-pane fade">
+                            <h3>Menu 1</h3>
+                            <div class="col-md-3">
+                                <button class="btn btn-danger center-block" data-toggle="modal" data-target="#factorialModal"> Factorials or Facsmorials? </button>
+                            </div>
+                        </div>
+                        <div id="menu2" class="tab-pane fade">
+                            <h3>Menu 2</h3>
+                            <div class="col-md-3">
+                                <button class="btn btn-danger center-block" data-toggle="modal" data-target="#fizzModal"> FIZZ-BUZZ! </button>
+                            </div>
+                        </div>
+                        <div id="menu3" class="tab-pane fade">
+                            <h3>Menu 3</h3>
+                            <div class="col-md-3">
+                                <button class="btn btn-danger center-block" data-toggle="modal" data-target="#palindromeModal"> Palindrome or Nah? </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+@section scripts{
+    <script>
+
+            $("#btnFact").click(function () {
+                var NTFV = Number($("#NTF").val());
+
+                var result = Factorial(NTFV);
+
+                $("#factResult").text(result);
+
+            });
+
+            function Factorial(number) {
+
+                for (var loop = number - 1; loop > 1; loop--) {
+                    number *= loop
+                }
+                return number;
+            }
+
+
+       @*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*@
+
+
+    $("#btnPalindrome").click(function () {
+
+        var input = $("#wordInput").val();
+
+        var output = ReverseWord(input);
+
+        if (input.toLowerCase() == output.toLowerCase()) {
+            $("#Results").text("The word " + input + " reversed equals " + output + ". Therefor " + input + " is a Palindorme");
+        }
+        else {
+            $("#Results").text("The word " + input + " reversed equals " + output + ". Therefor " + input + " is not a Palindrome");
+        }
+    });
+
+    function ReverseWord(word) {
+        return word.split('').reverse().join('');
+    }
+
+
+
+
+        @*--------------------------------------------------------------------------------------------*@
+
+
+
+
+
+
+            function FizzBuzzA(value1, value2) {
+                let returnValue = "";
+                for (let i = 1; i <= 100; i++) {
+                    if (i % value1 == 0 && i % value2 == 0) {
+                        returnValue += 'FizzBuzz, ';
+                    }
+                    else if (i % value1 == 0) {
+                        returnValue += 'Fizz, ';
+                    }
+                    else if (i % value2 == 0) {
+                        returnValue += 'Buzz, ';
+                    }
+                    else {
+                        returnValue += i + ', ';
+                    }
+                }
+                return returnValue.substr(0, returnValue.length - 2);
+            }
+
+            function buzzIt() {
+                let output = "";
+                let val1 = document.getElementById('Fizzvalue').value;
+                let val2 = document.getElementById('Buzzvalue').value;
+                output = FizzBuzzA(val1, val2);
+                document.getElementById('results').innerHTML = output;
+            }
+
+        @*------------------------------------------------------------------------*@
+
+            function myFunction() {
+                var a = +$("#num1").val();
+                var b = +$("#num2").val();
+                var c = +$("#num3").val();
+                var d = +$("#num4").val();
+                var e = +$("#num5").val();
+                var str = "min value: " + Math.min(a, b, c, d, e) + " max value: " + Math.max(a, b, c, d, e);
+                document.getElementById("demo").innerHTML = str;
+            }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+}
+
+
+
+
+
+
+<!--_Layout.cshtml includes:
+    <DOVTYPE>
+    <hmtl>
+    <head>
+    -->
+
+<!--<div class="container">
+  <h2>Dynamic Pills</h2>
+  <p>To make the tabs toggleable, add the data-toggle="pill" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
+  <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+    <li><a data-toggle="pill" href="#menu1">Menu 1</a></li>
+    <li><a data-toggle="pill" href="#menu2">Menu 2</a></li>
+    <li><a data-toggle="pill" href="#menu3">Menu 3</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>-->

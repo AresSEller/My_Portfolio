@@ -1,0 +1,65 @@
+﻿
+<h2>Website Development</h2>
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="inner-heading">
+                  
+                    <h2>Portfolio 2 columns</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <ul class="portfolio-categ filter">
+                    <li class="all">@Html.ActionLink("All", "Portfolio")</li>
+                    <li class="web">@Html.ActionLink("JavaScript Excersises", "JavaScriptE")</li>
+                    <li class="icon active">@Html.ActionLink("Web Development", "WebDev")</li>
+                </ul>
+
+                <div class="clearfix"></div>
+                <div class="row">
+                    <section id="projects">
+                        <ul id="thumbs" class="grid cs-style-4 portfolio">
+
+                            <li class="item-thumbs span6 design" data-id="id-0" data-type="design">
+                                <div class="item">
+                                    <figure>
+                                        <div>
+                                            <img src="~/img/GATEW.png" />
+                                        </div>
+                                        <figcaption>
+                                            <div>
+                                                <span>
+                                                    @Html.ActionLink("The Gate Way", "", null, new { @class = "actbutton" })
+                                                </span>
+                                                <span>
+                                                    @*@Html.ActionLink("", "", null, new { @class = "actbutton" })*@
+                                                </span>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+

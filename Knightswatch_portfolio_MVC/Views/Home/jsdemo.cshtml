@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "jsdemo";
+}
+
+<h2>Find The Minimum/Maximum Number!</h2>
+
+
+@{
+    ViewBag.Title = "jsdemo";
+}
+
+
+
+<div>
+    <div class="row h3 text-center">
+        <div class="col-md-6 h3">
+            Input First Number<br />
+            Input Second Number<br />
+            Input Third Number<br />
+            Input Fourth Number<br />
+            Input Fifth Number<br />
+        </div>
+        <div class="col-md-6">
+            <input id="num1" /><br />
+            <input id="num2" /><br />
+            <input id="num3" /><br />
+            <input id="num4" /><br />
+            <input id="num5" /><br />
+        </div>
+
+
+        <button onclick="myFunction()" class="center-block"> Find Min, Max Values</button>
+        <!--limited-->
+    </div>
+
+    <p id="demo" class="h3"></p>
+
+
+
+
+
+
+
+
+    <div class="row">
+
+        <h1>FIZZBUZZ</h1>
+
+        <div class="col-md-3">
+            <input id="Fizzvalue" type="number" name="fizz" value="" />
+            <input id="Buzzvalue" type="number" name="buzz" value="" />
+            <input type="submit" onclick="buzzIt()" value="Fizzy Boi" />
+            <hr />
+            <p id="results"> </p>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    @section scripts{
+        <script>
+            function myFunction() {
+                var a = +$("#num1").val();
+                var b = +$("#num2").val();
+                var c = +$("#num3").val();
+                var d = +$("#num4").val();
+                var e = +$("#num5").val();
+                var str = "min value: " + Math.min(a, b, c, d, e) + " max value: " + Math.max(a, b, c, d, e);
+                document.getElementById("demo").innerHTML = str;
+                //$("#demo").html(str);
+                //Jquery is far more compact than JavaScript
+            }
+
+
+        @*--------------------------------------------------*@
+
+
+
+            function FizzBuzzA(value1, value2) {
+                let returnValue = "";
+                for (let i = 1; i <= 100; i++) {
+                    if (i % value1 == 0 && i % value2 == 0) {
+                        returnValue += 'FizzBuzz, ';
+                    }
+                    else if (i % value1 == 0) {
+                        returnValue += 'Fizz, ';
+                    }
+                    else if (i % value2 == 0) {
+                        returnValue += 'Buzz, ';
+                    }
+                    else {
+                        returnValue += i + ', ';
+                    }
+                }
+                return returnValue;
+            }
+
+    function buzzIt() {
+        let output = "";
+        let val1 = document.getElementById('Fizzvalue').value;
+        let val2 = document.getElementById('Buzzvalue').value;
+        output = FizzBuzzA(val1, val2);
+        document.getElementById('results').innerHTML = output;
+    }
+
+
+        </script>
+
+
+
+
+
+    }
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
